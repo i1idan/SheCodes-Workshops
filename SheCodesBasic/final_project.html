@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>AI In Medicine</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
+
+      body {
+        background-color: rgb(34, 34, 34);
+        font-family: "Fira Sans", sans-serif;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        text-align: center;
+      }
+
+      h1 {
+        color: white;
+        text-align: center;
+      }
+
+      h2 {
+        color: white;
+        text-align: center;
+        font-size: 18px;
+        border: solid;
+        padding: 12px;
+        border-radius: 5px;
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+        border-radius: 35px;
+        opacity: 0.9;
+        padding: 20px;
+      }
+
+      img:hover {
+        transform: scale(1.04);
+        cursor: pointer;
+      }
+      p {
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 8px;
+        width: 100%;
+      }
+
+      tr {
+        background-color: rgb(34, 34, 34);
+        color: white;
+      }
+
+      th {
+        background-color: #652f9e;
+        color: white;
+        border-radius: 2px;
+      }
+
+      input[type="file"] {
+        display: none;
+        color: white;
+        background-color: gray;
+      }
+      .custom-file-upload {
+        border: 1px solid #ccc;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+      }
+
+      button {
+        color: white;
+        background-color: rgb(34, 34, 34);
+        border: 2px solid;
+        border-radius: 10px;
+        padding: 15px 25px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        color: white;
+        background-color: #652f9e;
+        transition: all 200ms ease-in-out;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        color: #652f9e;
+      }
+
+      .container {
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(112, 42, 184, 1) 35%,
+          rgba(62, 64, 68, 1) 100%
+        );
+        width: 60%;
+        display: block;
+        margin: 0 auto;
+        box-shadow: 10px 10px 10px 10px rgb(0, 0, 0, 0.2);
+        border-radius: 20px;
+      }
+
+      .content {
+        background-color: rgb(34, 34, 34);
+        border-radius: 12px;
+        opacity: 0.9;
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        box-shadow: 10px 10px 10px 10px rgb(0, 0, 0, 0.15);
+      }
+
+      .uploadfile {
+        display: block;
+        margin: 0px auto;
+      }
+
+      .footer {
+        display: block;
+        margin: 0px auto;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>&#x2695; AI In Medicine &#x2695;</h1>
+
+      <h2>Chest X-ray Analysis</h2>
+
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/059/930/original/Screenshot_from_2022-12-22_00-04-21.png?1671654949"
+      />
+
+      <div class="content">
+        <p>
+          <strong> artificial intelligence (AI) </strong>, when it comes to
+          radiodiagnosis, is changing the way healthcare services are delivered.
+          Deep learning-based research is motivated by the desire to improve
+          diagnostic accuracy and speed. In situations where immediate and
+          appropriate responses are required in the absence of health-care
+          representatives, AI appears to stand out.Automated detection of chest
+          pathologies from routine chest radiographs (CXRs) will save time and
+          provide physicians with the option of prioritizing high-risk patients.
+        </p>
+        <table>
+          <tr>
+            <th><em> Abnormality </em></th>
+            <th><em> Percentage </em></th>
+          </tr>
+          <tr>
+            <td>pneumonia</td>
+            <td>33.4%</td>
+          </tr>
+          <tr>
+            <td>enlarged heart</td>
+            <td>2.33%</td>
+          </tr>
+          <tr>
+            <td>pleural thickening</td>
+            <td>69.8%</td>
+          </tr>
+        </table>
+      </div>
+      <br /><br />
+      <div class="'uploadfile">
+        <span class="custom-file-upload">
+          <input type="file" id="xrayFile" name="filename" />
+          <i class="fa fa-cloud-upload"></i> Upload Chest X-ray Image
+        </span>
+        <button>Generate Report</button>
+      </div>
+    </div>
+
+    <br /><br />
+
+    <div class="footer">
+      Coded With &#x1F49C; by
+      <a href="https://www.linkedin.com/in/maryam-saeedi-b6ab17196/">
+        Maryam Saeedi</a
+      >
+    </div>
+
+    <script>
+      function generateReport() {
+        let name = prompt("Please enter your name");
+        let email = prompt("Please enter your email");
+
+        if (name == "" || email == "") {
+          alert("Please provide a valid name/email");
+        } else {
+          alert(`The generated xray report will be emailed to you, ${name} !`);
+        }
+      }
+
+      let button = document.querySelector("button");
+      button.addEventListener("click", generateReport);
+    </script>
+  </body>
+</html>
